@@ -20,6 +20,13 @@
 				<td><strong>Introduction</strong></td>
 				<td><%= user.introduction %><br></td>
 			</tr>
+
+			<tr>
+				<td><strong>follows<br>followers</strong></td>
+				<td><%= render 'stats' %>
+				<br></td>
+			</tr>
+
 		</tbody>
 </table>
 		<% if @user == current_user %>

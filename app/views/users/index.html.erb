@@ -15,7 +15,10 @@
 					<tr>
 					<th>image</th>
 					<th>name</th>
-					<th></th>
+					<th>フォロー数</th>
+					<th>フォロワー数</th>
+					<th>フォローボタン</th>
+					<td>詳細ページへ
 					</tr>
 				</thead>
 
@@ -25,6 +28,9 @@
 
 						<td><%= attachment_image_tag user, :profile_image, size:"60x60", fallback:"no_image.png", format:'png' %></td>
 						<td><%= user.name %></td>
+						<td><%= user.followings.count%></td>
+						<td><%= user.followers.count%></td>
+						<td><%= render 'relationships/follow_button', user: user %></td>
 						<td><%= link_to "Show", user_path(user.id) %></td>
 					</tr>
 				</tbody>
